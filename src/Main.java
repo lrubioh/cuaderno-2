@@ -31,6 +31,21 @@ public class Main {
         System.out.println(p1.distance(5, 6)); // which version? INT X, INT Y
         System.out.println(p1.distance()); // which version? DISTANCIA CON EL 0
 
+        // Creación y visualización de 10 puntos
+        MyPoint[] points = new MyPoint[10];
+        for (int i = 0; i < points.length; i++) {
+            points[i] = new MyPoint(i + 1, i + 1);
+        }
+
+        // Matriz de distancias
+        System.out.println("Matriz de distancias:");
+        for (int i = 0; i < points.length; i++) {
+            for (int j = 0; j < points.length; j++) {
+                System.out.printf("%.2f ", points[i].distance(points[j]));
+            }
+            System.out.println();
+        }
+
     }
 
 }
