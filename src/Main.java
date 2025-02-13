@@ -1,53 +1,55 @@
-import es.uah.matcomp.mp.e2.ejerciciosclases.e4.MyPoint;
+import es.uah.matcomp.mp.e2.ejerciciosclases.e5.MyPoint;
+import es.uah.matcomp.mp.e2.ejerciciosclases.e5.Myline;
 public class Main {
     public static void main(String[] args) {
 
         /// pruebo todos los metodos para ver que funcionen correctamente
 
-        MyPoint p1 = new MyPoint(); //p1 =(0,0) por el MyPoint()
-        System.out.println(p1); //imprimo p1 con el String to String
-        //con los setters cambio las coord de p1 por las nuevas que estoy estableciendo
-        p1.setX(8);
-        p1.setY(6);
-        // lo imprimo usando la funcion getX y getY para probarlas tambien, la otra
-        //opcion es el string to string pero ese ya le he usado con lo que lo pruebo
-        //a traves de estos
-        System.out.println("x is: " + p1.getX()); // Test getters
-        System.out.println("y is: " + p1.getY());
-        //pruebo la funcion de setXY para establecer las coordenadas en una sola funcion
-        //y no en dos como he hecho arriba
-        p1.setXY(3, 0);
-        //pruebo la funcion getXY int[]
-        System.out.println(p1.getXY()[0]);
-        System.out.println(p1.getXY()[1]);
+        MyPoint p1 = new MyPoint(16, 5);
+        MyPoint p2 = new MyPoint(1, 7);
+        MyPoint p3 = new MyPoint(2, 8);
+        Myline l1 = new Myline(1, 3, 2, 5);
+        Myline l2 = new Myline(p1, p2);
         System.out.println(p1);
-        //creo un nuevo punto y lo imprimo por pantalla
-        MyPoint p2 = new MyPoint(0, 4);
-        System.out.println(p2);
+        System.out.println(l1); //imprimo mi linea : su inicio  final
+        //imprimo la linea coordenada a coordenada del inicio y final
+        System.out.println(l2.getBegin()); //imprimo el begin entero
+        System.out.println(l2.getEnd());//imprimo el end entero
+        System.out.println(l1.getBeginX());
+        System.out.println(l1.getBeginY());
+        System.out.println(l1.getEndX());
+        System.out.println(l1.getEndY());
 
-        /// PRUEBO LOS METODOS DE LAS DISTANCIAS
-        System.out.println(p1.distance(p2)); // which version? ANOTHER
-        System.out.println(p2.distance(p1)); // which version? ANOTHER
-        System.out.println(p1.distance(5, 6)); // which version? INT X, INT Y
-        System.out.println(p1.distance()); // which version? DISTANCIA CON EL 0
+        // pruebo los setters
+        l1.setBeginX(p1.getX());
+        System.out.println(l1);//lo imprimo solo cambiando la x
+        l1.setBeginY(p1.getY());
+        System.out.println(l1);//lo imprimo cambiandolo entero
 
-        // Creación y visualización de 10 puntos
-        MyPoint[] points = new MyPoint[10];
-        for (int i = 0; i < points.length; i++) {
-            points[i] = new MyPoint(i + 1, i + 1);
-        }
+        l1.setEndX(p1.getX());
+        System.out.println(l1);
+        l1.setEndY(p1.getY());
+        System.out.println(l1);
 
-        // Matriz de distancias
-        System.out.println("Matriz de distancias:");
-        for (int i = 0; i < points.length; i++) {
-            for (int j = 0; j < points.length; j++) {
-                System.out.printf("%.2f ", points[i].distance(points[j]));
-            }
-            System.out.println();
-        }
+        l1.setBegin(p2);
+        System.out.println(l1);
+        l2.setEnd(p3);
+        System.out.println(l2);
 
+        //pruebo los set y los get XY
+
+        l1.setBeginXY(p3.getX(), p2.getY()); //set el x del p3 y el y del p2 como begin
+        System.out.println(l1);//lo imprimo
+        l1.getBeginXY();// saco solo en begin de l1
+        l2.setEndXY(p1.getX(), p2.getY()); //set el x del p1 y el y del p2
+        System.out.println(l2);//imprimo l2
+        l2.getEndXY();//saco el end de l2 para comprobar que el set se haya hecho bien
+
+        //pruebo el get length
+
+        System.out.println(l2.getLength());
+        System.out.println(l1.getLength());
     }
-
 }
 
 
