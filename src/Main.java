@@ -1,33 +1,24 @@
-import es.uah.matcomp.mp.e2.ejerciciosclases.e6.MyPoint;
-import es.uah.matcomp.mp.e2.ejerciciosclases.e6.MyCircle;
+import es.uah.matcomp.mp.e2.ejerciciosclases.e7.MyPoint;
+import es.uah.matcomp.mp.e2.ejerciciosclases.e7.MyTriangle;
+
 public class Main {
     public static void main(String[] args) {
-        MyPoint p1 = new MyPoint(0,1 );
-        MyCircle c1 = new MyCircle();
-        MyCircle c2 = new MyCircle( 1,2,5);
-        MyCircle c3 = new MyCircle(p1,5);
+        MyPoint v1 = new MyPoint(2,7 );
+        MyPoint v2 = new MyPoint(8,5 );
+        MyPoint v3 = new MyPoint(3,1);
 
-        //IMPRIMO LA INFO DE LOS DOS CIRCULOS CON EL STRING
-        System.out.println(c1.toString());
-        System.out.println(c2.toString());
-        //PRUBO LAS FUNCIONES SET Y GET
-        c1.setRadius(2);
-        System.out.println(c1.getRadius());
-        //cambio el center en x y en y de c2
-        c2.setCenterX(1);
-        c2.setCenterY(5);
-        System.out.println(c2.getCenter());
+        MyTriangle t1 = new MyTriangle(v1,v2,v3);
+        MyTriangle t2= new MyTriangle(0,0,4,0,2,3);
+        System.out.println(t1.toString());
+        System.out.println(t2.toString());
 
-
-
-        //AREA
-        System.out.println(c1.getArea());
-
-        //Circumference
-        System.out.println(c2.getCircumference());
-
-        //DISTANCE
-        System.out.println(c1.distance(c2));
+        System.out.println(t1.getPerimeter());
+        System.out.println(t1.getType());
+        System.out.println(t2.getType());
+        MyTriangle t3= new MyTriangle(1,1,6,1,5,5);
+        System.out.println(t3.toString());
+        System.out.println(t3.getPerimeter());
+        System.out.println(t3.getType());
 
 
 
