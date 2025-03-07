@@ -1,27 +1,36 @@
-import es.uah.matcomp.mp.e2.ejerciciosclases.e7.MyPoint;
-import es.uah.matcomp.mp.e2.ejerciciosclases.e7.MyTriangle;
+import es.uah.matcomp.mp.e3.ejerciciosclases.e1.Cylinder;
+
 
 public class Main {
-    public static void main(String[] args) {
-        MyPoint v1 = new MyPoint(2,7 );
-        MyPoint v2 = new MyPoint(8,5 );
-        MyPoint v3 = new MyPoint(3,1);
+    public static void main (String[] args) {
+        // Declare and allocate a new instance of cylinder
+        // with default color, radius, and height
+        Cylinder c1 = new Cylinder();
+        System.out.println("Cylinder:"
+                + " radius=" + c1.getRadius()
+                + " height=" + c1.getHeight()
+                + " base area=" + c1.getArea()
+                + " volume=" + c1.getVolume());
 
-        MyTriangle t1 = new MyTriangle(v1,v2,v3);
-        MyTriangle t2= new MyTriangle(0,0,4,0,2,3);
-        System.out.println(t1.toString());
-        System.out.println(t2.toString());
+        // Declare and allocate a new instance of cylinder
+        // specifying height, with default color and radius
+        Cylinder c2 = new Cylinder(10.0);
+        System.out.println("Cylinder:"
+                + " radius=" + c2.getRadius()
+                + " height=" + c2.getHeight()
+                + " base area=" + c2.getArea()
+                + " volume=" + c2.getVolume());
 
-        System.out.println(t1.getPerimeter());
-        System.out.println(t1.getType());
-        System.out.println(t2.getType());
-        MyTriangle t3= new MyTriangle(1,1,6,1,5,5);
-        System.out.println(t3.toString());
-        System.out.println(t3.getPerimeter());
-        System.out.println(t3.getType());
-
-
-
+        // Declare and allocate a new instance of cylinder
+        // specifying radius and height, with default color
+        Cylinder c3 = new Cylinder(2.0, 10.0);
+        System.out.println("Cylinder:"
+                + " radius=" + c3.getRadius()
+                + " height=" + c3.getHeight()
+                + " base area=" + c3.getArea()
+                + " volume=" + c3.getVolume());
     }
+
+
 }
 
